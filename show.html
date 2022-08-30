@@ -132,7 +132,7 @@
             S.Drawing.init('.canvas');
             document.body.classList.add('body--ready');
             //想说的话
-            S.UI.simulate("我的宝贝老婆|媛儿小朋友|生日快乐|#countdown 3|#time");
+            S.UI.simulate("我的|宝贝|老婆|媛儿|小朋友|生日|快乐|5|2|0|#countdown 0|#time");
             S.Drawing.loop(function () {
                 S.Shape.render();
             });
@@ -150,7 +150,7 @@
                 window.oRequestAnimationFrame ||
                 window.msRequestAnimationFrame ||
                 function (callback) {
-                    window.setTimeout(callback, 1000 / 60);
+                    window.setTimeout(callback, 1000 / 200);
                 };
 
         return {
@@ -259,7 +259,7 @@
                             } else {
                                 S.Shape.switchShape(S.ShapeBuilder.letter(index), true);
                             }
-                        }, 1000, value, true);
+                        }, 1000, 0, true);
                         break;
 
                     case 'rectangle':
@@ -437,7 +437,7 @@
         var gap = 13,
             shapeCanvas = document.createElement('canvas'),
             shapeContext = shapeCanvas.getContext('2d'),
-            fontSize = 500,
+            fontSize = 300,
             fontFamily = 'Avenir, Helvetica Neue, Helvetica, Arial, sans-serif';
 
         function fit() {
